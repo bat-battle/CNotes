@@ -1,4 +1,5 @@
 #include <stdio.h>  
+#include <stdlib.h>
 
 #if 0
 The constructor attribute causes the function to be called automatically before 
@@ -10,7 +11,7 @@ implicitly during the execution of the program.
 more infoformation: https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/Common-Function-Attributes.html#Common-Function-Attributes
 #endif 
   
-__attribute__((constructor)) void before_main_to_run()  
+__attribute__((constructor)) void before_main_to_run_xut()  
 {  
     printf("Hi～,i am called before the main function!\n");
     printf("%s\n",__FUNCTION__);  
@@ -36,5 +37,6 @@ __attribute((destructor)) void after_main_to_run_two()
 int main( int argc, char ** argv )  
 {  
     printf("i am main function, and i can get my name(%s) by this way.\n",__FUNCTION__);  
-    return 0;  
+    exit(0);
+//    return 0;  
 }  
